@@ -30,11 +30,9 @@ public class StudentServiceImplementation implements StudentService {
 	@Override
 	public Student updateStudent(Student student, int id) {
 		Student existingStudent= studentRepository.findById(id).orElseThrow();
-
 		existingStudent.setFirstName(student.getFirstName());
 		existingStudent.setLastName(student.getLastName());
 		existingStudent.setEmail(student.getEmail());
-		// save existing employee to DB
 		studentRepository.save(existingStudent);
 		return existingStudent;
 	}
@@ -46,7 +44,6 @@ public class StudentServiceImplementation implements StudentService {
 
 	@Override
 	public Student saveStudent(Student student) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
